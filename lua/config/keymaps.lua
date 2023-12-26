@@ -14,6 +14,11 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 --vim.inoremap = 'jj' '<Esc>'
 vim.keymap.set("i", "jj", "<ESC>", { noremap = true, silent = false })
 
+vim.wo.signcolumn = "yes"
+
+-- FZF (not via telescope )
+vim.api.nvim_set_keymap("n", "<C-p>", "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true, silent = true })
+
 -- Enable folding with Treesitter, open all folds by default
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"

@@ -13,24 +13,25 @@ return {
   --
   -- Now when the user changes the cwd with :cd some/new/dir auto-session handles it gracefully,
   -- saving the current session so there aren't losses and loading the session for the upcoming cwd if it exists.
-  -- {
-  --   "rmagatti/auto-session",
-  --   config = function()
-  --     ---@diagnostic disable-next-line: missing-fields
-  --     require("auto-session").setup({
-  --       log_level = "error",
-  --       auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
-  --       -- Ciaron: set use_git_branch to true, auto-session errors if
-  --       -- i've swapped branches and the file doesn't exist
-  --       auto_session_use_git_branch = true,
-  --       auto_session_enable_last_session = false,
-  --       pre_save_cmds = { "tabdo Neotree close" },
-  --       save_extra_cmds = {
-  --         function()
-  --           return [[echo "Session Saved"]]
-  --         end,
-  --       },
-  --     })
-  --   end,
-  -- },
+  {
+    "rmagatti/auto-session",
+    enabled = true,
+    config = function()
+      ---@diagnostic disable-next-line: missing-fields
+      require("auto-session").setup({
+        log_level = "error",
+        auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
+        -- Ciaron: set use_git_branch to true, auto-session errors if
+        -- i've swapped branches and the file doesn't exist
+        auto_session_use_git_branch = true,
+        auto_session_enable_last_session = false,
+        pre_save_cmds = { "tabdo Neotree close" },
+        save_extra_cmds = {
+          function()
+            return [[echo "Session Saved"]]
+          end,
+        },
+      })
+    end,
+  },
 }
