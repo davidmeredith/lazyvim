@@ -1,7 +1,4 @@
 return {
-  -- TODO
-  -- https://github.com/github/copilot.vim
-
   -- Session Management
   -- Auto-Session by default stores sessions in vim.fn.stdpath('data').."/sessions/"
   -- 1. When starting nvim with NO args, auto-session will try to restore an existing
