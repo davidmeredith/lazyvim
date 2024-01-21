@@ -34,4 +34,22 @@ return {
       substitutions = {},
     },
   },
+
+  mappings = {
+    -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault (default)
+    ["gf"] = {
+      action = function()
+        return require("obsidian").util.gf_passthrough()
+      end,
+      opts = { noremap = false, expr = true, buffer = true },
+    },
+    -- Toggle check-boxes, changed to oh as '<leader>ch' clashes with code action, but i can't
+    -- get this to work correctly
+    ["<leader>oh"] = {
+      action = function()
+        return require("obsidian").util.toggle_checkbox()
+      end,
+      opts = { buffer = true },
+    },
+  },
 }

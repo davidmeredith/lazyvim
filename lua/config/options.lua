@@ -5,3 +5,4 @@
 -- Dave's customisations that override the Kickstart defaults.
 vim.o.wrap = true
 vim.o.spelllang = "en_gb"
+vim.o.conceallevel = 1 -- Needed for LazyVim
