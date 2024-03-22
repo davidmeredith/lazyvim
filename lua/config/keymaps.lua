@@ -81,7 +81,7 @@ vim.api.nvim_set_var("vim_json_conceal", 0)
 -- If using, set its size
 vim.api.nvim_set_var("netrw_winsize", 25)
 
--- Split navigagtion (use christoomey plugin instead)
+-- Split navigagtion (use christoomey plugin instead, which is 'Ctrl hjkl')
 -- ==================
 -- Jump between splits, old vimrc version:
 -- nnoremap <leader>h :wincmd h<CR>
@@ -126,7 +126,7 @@ vim.keymap.set("n", "<leader>k", ":resize -5<CR>", { noremap = true, silent = tr
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-Tab>", ":bprev<CR>", { noremap = true, silent = true })
 
--- Because Lazyvim ovrewrites these
+-- Because Lazyvim ovrewrites these (move cursor: high, medium, low)
 vim.keymap.set("n", "H", "H")
 vim.keymap.set("n", "M", "M")
 vim.keymap.set("n", "L", "L")
