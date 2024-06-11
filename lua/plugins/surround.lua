@@ -9,19 +9,19 @@ return {
       -- DM: I'm manually specifying the keymaps here to fix the following bug, fixed
       -- 21/03/24 so falling back to default now
       -- bug: https://github.com/kylechui/nvim-surround/pull/312
-      -- keymaps = {
-      --   insert = "<C-g>s",
-      --   insert_line = "<C-g>S",
-      --   normal = "ys",
-      --   normal_cur = "yss",
-      --   normal_line = "yS",
-      --   normal_cur_line = "ySS",
-      --   visual = "S",
-      --   visual_line = "gS",
-      --   delete = "ds",
-      --   change = "cs",
-      --   change_line = "cS",
-      -- },
+      keymaps = {
+        insert = "<C-g>s",
+        insert_line = "<C-g>S",
+        normal = "ys",
+        normal_cur = "yss",
+        normal_line = "yS",
+        normal_cur_line = "ySS",
+        visual = "S",
+        visual_line = "gS",
+        delete = "ds",
+        change = "cs",
+        change_line = "cS",
+      },
     })
   end,
 }
