@@ -6,9 +6,7 @@ return {
     --require("nvim-surround").setup()
     require("nvim-surround").setup({
       -- Configuration here, or leave empty to use defaults
-      -- DM: I'm manually specifying the keymaps here to fix the following bug, fixed
-      -- 21/03/24 so falling back to default now
-      -- bug: https://github.com/kylechui/nvim-surround/pull/312
+      -- DM: note potential for conflict keymap between S (flash vs surroud)
       keymaps = {
         insert = "<C-g>s",
         insert_line = "<C-g>S",
@@ -16,6 +14,7 @@ return {
         normal_cur = "yss",
         normal_line = "yS",
         normal_cur_line = "ySS",
+        --visual = "<leader>S", -- default: visual = "S" (clashes with flash.nvim search)
         visual = "S",
         visual_line = "gS",
         delete = "ds",
