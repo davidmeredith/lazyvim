@@ -105,11 +105,39 @@ vim.api.nvim_set_var("netrw_winsize", 25)
 -- vim.keymap.set('n', '<leader>=', ':resize +5<CR>', {noremap=true, silent=true})
 -- vim.keymap.set('n', '<leader>-', ':resize -5<CR>', {noremap=true, silent=true})
 --
--- Remember, these are not TMUX panes, i use "<Ctrl b> hjkl" where 'b' is leader (space)
-vim.keymap.set("n", "<leader>l", ":vertical resize +5<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>h", ":vertical resize -5<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>j", ":resize +5<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>k", ":resize -5<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>l", ":vertical resize +13<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>h", ":vertical resize -13<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>j", ":resize +13<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>k", ":resize -13<CR>", { noremap = true, silent = true })
+
+vim.keymap.set(
+  "n",
+  "<C-W>l",
+  --"<C-space>l",
+  ":vertical resize +13<CR>",
+  { noremap = true, silent = true, desc = "Increase vsplit width" }
+)
+vim.keymap.set(
+  "n",
+  "<C-W>h",
+  --"<C-space>h",
+  ":vertical resize -13<CR>",
+  { noremap = true, silent = true, desc = "Decrease vsplit width" }
+)
+vim.keymap.set(
+  "n",
+  "<C-W>j",
+  --"<C-space>j",
+  ":resize +13<CR>",
+  { noremap = true, silent = true, desc = "Increase h-split height" }
+)
+vim.keymap.set(
+  "n",
+  "<C-W>k",
+  --"<C-space>k",
+  ":resize -13<CR>",
+  { noremap = true, silent = true, desc = "Decrease h-split height" }
+)
 
 -- Tab navigation
 -- ===============
@@ -139,3 +167,14 @@ vim.keymap.set("n", "L", "L")
 --let g:VM_maps["Add Cursor Up"]      = '<M-k>'   " new cursor up
 --vim.g.VM_maps["Add Cursor Down"] = "<C-j>"
 --vim.g.VM_maps["Add Cursor Up"] = "<C-k>"
+
+-- quiCk Fix list
+-- =================
+-- To populate manually e.g. from within a Telescope search use, Ctrl-q
+-- To open/close quickfix :copen  :close  (hence quiCk)
+-- To open/close quickfix :copen  :close  :cnewer :colder (hence quiCk)
+-- To move through quickfix list without jumping to that panel:
+-- 'M' is for meta (option on mac)
+--vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
+--vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
+--

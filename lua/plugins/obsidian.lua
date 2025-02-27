@@ -1,61 +1,61 @@
-return {
-  "epwalsh/obsidian.nvim",
-  version = "*", -- recommended, use latest release instead of latest commit
-  lazy = true,
-  ft = "markdown",
-  -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-  -- event = {
-  --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-  --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-  --   "BufReadPre path/to/my-vault/**.md",
-  --   "BufNewFile path/to/my-vault/**.md",
-  -- },
-  dependencies = {
-    -- Required.
-    "nvim-lua/plenary.nvim",
-  },
-  opts = {
-    workspaces = {
-      --{
-      --  name = "personal",
-      --  path = "~/vaults/personal",
-      --},
-      {
-        name = "obsidian",
-        path = "~/vcs/obsidian",
-      },
-    },
-    -- Optional, for templates (see below).
-    templates = {
-      subdir = "Templates",
-      date_format = "%d-%m-%Y",
-      time_format = "%H:%M",
-      -- A map for custom variables, the key should be the variable and the value a function
-      substitutions = {},
-    },
-
-    mappings = {
-      -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault (default)
-      ["gf"] = {
-        action = function()
-          return require("obsidian").util.gf_passthrough()
-        end,
-        opts = { noremap = false, expr = true, buffer = true },
-      },
-      -- Toggle check-boxes, changed to oh as '<leader>ch' clashes with code action
-      ["<leader>oh"] = {
-        action = function()
-          return require("obsidian").util.toggle_checkbox()
-        end,
-        opts = { buffer = true },
-      },
-    },
-    -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
-    -- URL it will be ignored but you can customize this behavior here.
-    follow_url_func = function(url)
-      -- Open the URL in the default web browser.
-      vim.fn.jobstart({ "open", url }) -- Mac OS
-      -- vim.fn.jobstart({"xdg-open", url})  -- linux
-    end,
-  },
-}
+return {}
+--  "epwalsh/obsidian.nvim",
+--  version = "*", -- recommended, use latest release instead of latest commit
+--  lazy = true,
+--  ft = "markdown",
+--  -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+--  -- event = {
+--  --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+--  --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+--  --   "BufReadPre path/to/my-vault/**.md",
+--  --   "BufNewFile path/to/my-vault/**.md",
+--  -- },
+--  dependencies = {
+--    -- Required.
+--    "nvim-lua/plenary.nvim",
+--  },
+--  opts = {
+--    workspaces = {
+--      --{
+--      --  name = "personal",
+--      --  path = "~/vaults/personal",
+--      --},
+--      {
+--        name = "obsidian",
+--        path = "~/vcs/obsidian",
+--      },
+--    },
+--    -- Optional, for templates (see below).
+--    templates = {
+--      subdir = "Templates",
+--      date_format = "%d-%m-%Y",
+--      time_format = "%H:%M",
+--      -- A map for custom variables, the key should be the variable and the value a function
+--      substitutions = {},
+--    },
+--
+--    mappings = {
+--      -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault (default)
+--      ["gf"] = {
+--        action = function()
+--          return require("obsidian").util.gf_passthrough()
+--        end,
+--        opts = { noremap = false, expr = true, buffer = true },
+--      },
+--      -- Toggle check-boxes, changed to oh as '<leader>ch' clashes with code action
+--      ["<leader>oh"] = {
+--        action = function()
+--          return require("obsidian").util.toggle_checkbox()
+--        end,
+--        opts = { buffer = true },
+--      },
+--    },
+--    -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
+--    -- URL it will be ignored but you can customize this behavior here.
+--    follow_url_func = function(url)
+--      -- Open the URL in the default web browser.
+--      vim.fn.jobstart({ "open", url }) -- Mac OS
+--      -- vim.fn.jobstart({"xdg-open", url})  -- linux
+--    end,
+--  },
+--}
