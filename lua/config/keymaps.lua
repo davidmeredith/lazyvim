@@ -105,37 +105,37 @@ vim.api.nvim_set_var("netrw_winsize", 25)
 -- vim.keymap.set('n', '<leader>=', ':resize +5<CR>', {noremap=true, silent=true})
 -- vim.keymap.set('n', '<leader>-', ':resize -5<CR>', {noremap=true, silent=true})
 --
-vim.keymap.set("n", "<leader>l", ":vertical resize +13<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>h", ":vertical resize -13<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>j", ":resize +13<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>k", ":resize -13<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>h", ":vertical resize +20<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>l", ":vertical resize -20<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>j", ":resize -6<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>k", ":resize +6<CR>", { noremap = true, silent = true })
 
-vim.keymap.set(
-  "n",
-  "<C-W>l",
-  --"<C-space>l",
-  ":vertical resize +13<CR>",
-  { noremap = true, silent = true, desc = "Increase vsplit width" }
-)
 vim.keymap.set(
   "n",
   "<C-W>h",
   --"<C-space>h",
-  ":vertical resize -13<CR>",
+  ":vertical resize +20<CR>",
   { noremap = true, silent = true, desc = "Decrease vsplit width" }
+)
+vim.keymap.set(
+  "n",
+  "<C-W>l",
+  --"<C-space>l",
+  ":vertical resize -20<CR>",
+  { noremap = true, silent = true, desc = "Increase vsplit width" }
 )
 vim.keymap.set(
   "n",
   "<C-W>j",
   --"<C-space>j",
-  ":resize +13<CR>",
+  ":resize -6<CR>",
   { noremap = true, silent = true, desc = "Increase h-split height" }
 )
 vim.keymap.set(
   "n",
   "<C-W>k",
   --"<C-space>k",
-  ":resize -13<CR>",
+  ":resize +6<CR>",
   { noremap = true, silent = true, desc = "Decrease h-split height" }
 )
 
@@ -178,3 +178,5 @@ vim.keymap.set("n", "L", "L")
 --vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
 --vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
 --
+
+--vim.keymap("n", "<Leader>ro", require("rustowl").rustowl_cursor, { silent = true, noremap = true })
