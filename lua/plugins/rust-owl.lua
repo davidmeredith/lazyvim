@@ -1,7 +1,7 @@
 return {
   "cordx56/rustowl",
   version = "*", -- Latest stable version
-  build = "cargo install --path . --locked",
+  build = "cargo binstall rustowl",
   lazy = false, -- This plugin is already lazy
   opts = {
     client = {
@@ -12,8 +12,7 @@ return {
       end,
     },
   },
-}
---return {
+} --return {
 --  "cordx56/rustowl",
 --  dependencies = { "neovim/nvim-lspconfig" },
 --  --  config = function()
