@@ -110,6 +110,8 @@ vim.keymap.set("n", "<leader>l", ":vertical resize -20<CR>", { noremap = true, s
 vim.keymap.set("n", "<leader>j", ":resize -6<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>k", ":resize +6<CR>", { noremap = true, silent = true })
 
+-- resize splits
+-- This resizes the split that is active/has the cursor focus
 vim.keymap.set(
   "n",
   "<C-W>h",
@@ -155,6 +157,18 @@ vim.keymap.set(
 -- nnoremap <S-TAB>  :bprev<CR>
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-Tab>", ":bprev<CR>", { noremap = true, silent = true })
+
+-- Tab between buffers using Command + Option + Arrow Key Bindings
+-- ================================================================
+-- (Don't configure this as these keybindings are used to tab between My terminal's tabs, not Neovim's tabs)
+-- NOTE: Key combinations involving both the 'Command' (<D->) and 'Option' (<A->)
+-- keys are highly dependent on your terminal emulator and operating system.
+-- For this to work, your terminal must be configured to pass this combination
+-- of keys to Neovim.
+-- Mappings for <Command-Option-Left> and <Command-Option-Right> to move between tabs.
+-- These use the '<D-A-' prefix for the combined Command/Super and Option/Alt keys.
+--vim.keymap.set("n", "<D-A-Left>", ":bprev<CR>", { desc = "Go to previous tab" })
+--vim.keymap.set("n", "<D-A-Right>", ":bnext<CR>", { desc = "Go to next tab" })
 
 -- Because Lazyvim ovrewrites these (move cursor: high, medium, low)
 vim.keymap.set("n", "H", "H")
