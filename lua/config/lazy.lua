@@ -47,5 +47,6 @@ require("lazy").setup({
 
 -- highlight the window for :LspInfo
 require("lspconfig.ui.windows").default_options = {
-  border = "single",
+  -- border = "single",
+  border = "rounded",
 }

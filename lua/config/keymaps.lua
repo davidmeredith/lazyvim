@@ -8,7 +8,7 @@ vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
 vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
 
 -- Have j and k navigate visual lines rather than logical ones
--- I think the v:cound is to deal with word wrap
+-- I think the v:count is to deal with word wrap
 -- (v:count is the count given for the last Normal mode command)
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
