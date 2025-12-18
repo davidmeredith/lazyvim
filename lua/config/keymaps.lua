@@ -115,31 +115,17 @@ vim.keymap.set("n", "<leader>k", ":resize +6<CR>", { noremap = true, silent = tr
 vim.keymap.set(
   "n",
   "<C-W>h",
-  --"<C-space>h",
   ":vertical resize +20<CR>",
   { noremap = true, silent = true, desc = "Decrease vsplit width" }
 )
 vim.keymap.set(
   "n",
   "<C-W>l",
-  --"<C-space>l",
   ":vertical resize -20<CR>",
   { noremap = true, silent = true, desc = "Increase vsplit width" }
 )
-vim.keymap.set(
-  "n",
-  "<C-W>j",
-  --"<C-space>j",
-  ":resize -6<CR>",
-  { noremap = true, silent = true, desc = "Increase h-split height" }
-)
-vim.keymap.set(
-  "n",
-  "<C-W>k",
-  --"<C-space>k",
-  ":resize +6<CR>",
-  { noremap = true, silent = true, desc = "Decrease h-split height" }
-)
+vim.keymap.set("n", "<C-W>j", ":resize -6<CR>", { noremap = true, silent = true, desc = "Increase h-split height" })
+vim.keymap.set("n", "<C-W>k", ":resize +6<CR>", { noremap = true, silent = true, desc = "Decrease h-split height" })
 
 -- Tab navigation
 -- ===============
