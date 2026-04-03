@@ -17,11 +17,12 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       require("auto-session").setup({
         log_level = "error",
-        auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
+        suppressed_dirs = { "~/", "~/Downloads", "/" },
         -- Ciaron: set use_git_branch to true, auto-session errors if
         -- i've swapped branches and the file doesn't exist
-        auto_session_use_git_branch = true,
-        auto_session_enable_last_session = false,
+        git_use_branch_name = true,
+        auto_restore_last_session = false,
+        --auto_session_enable_last_session = false,
         pre_save_cmds = { "tabdo Neotree close" },
         save_extra_cmds = {
           function()
