@@ -180,3 +180,13 @@ vim.keymap.set("n", "L", "L")
 --
 
 --vim.keymap("n", "<Leader>ro", require("rustowl").rustowl_cursor, { silent = true, noremap = true })
+
+-- DM: this is the new kotlin_lsp direct from jetbrains that replaces the old 'kotlin_language_server' that is available in LazyExtras.
+-- Notice that the old kotlin_language_server is labelled as deprecated on their github: https://github.com/fwcd/kotlin-language-server
+-- install: brew install JetBrains/utils/kotlin-lsp
+-- Then see: https://github.com/Kotlin/kotlin-lsp/blob/main/scripts/neovim.md
+vim.lsp.enable("kotlin_lsp")
+-- configure language server's options
+vim.lsp.config("kotlin_lsp", {
+  single_file_support = false,
+})

@@ -21,15 +21,16 @@ vim.diagnostic.config({
 --local lspconfig = require("nvim-lspconfig")
 --lspconfig.rustowlsp.setup({})
 
+-- Is not installed via Masson
 -- DM: this is the new kotlin_lsp direct from jetbrains that replaces the old 'kotlin_language_server' that is available in LazyExtras.
 -- Notice that the old kotlin_language_server is labelled as deprecated on their github: https://github.com/fwcd/kotlin-language-server
--- see: https://github.com/Kotlin/kotlin-lsp/blob/main/scripts/neovim.md
 -- install: brew install JetBrains/utils/kotlin-lsp
-vim.lsp.enable("kotlin_lsp")
--- configure language server's options
-vim.lsp.config("kotlin_lsp", {
-  single_file_support = false,
-})
+-- Then see: https://github.com/Kotlin/kotlin-lsp/blob/main/scripts/neovim.md
+-- vim.lsp.enable("kotlin_lsp")
+-- -- configure language server's options
+-- vim.lsp.config("kotlin_lsp", {
+--   single_file_support = false,
+-- })
 
 -- for auto-session plugin
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
