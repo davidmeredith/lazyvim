@@ -21,7 +21,8 @@ vim.diagnostic.config({
 --local lspconfig = require("nvim-lspconfig")
 --lspconfig.rustowlsp.setup({})
 
--- Is not installed via Masson
+-- Is now installed via Mason, not via manual process below
+-- ---------------------------------------------------------
 -- DM: this is the new kotlin_lsp direct from jetbrains that replaces the old 'kotlin_language_server' that is available in LazyExtras.
 -- Notice that the old kotlin_language_server is labelled as deprecated on their github: https://github.com/fwcd/kotlin-language-server
 -- install: brew install JetBrains/utils/kotlin-lsp
