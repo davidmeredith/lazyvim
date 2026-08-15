@@ -14,7 +14,7 @@ return {
     -- this file can contain specific instructions for your project
     instructions_file = "avante.md",
     -- for example
-    provider = "claude",
+    provider = "osprey",
     providers = {
       claude = {
         endpoint = "https://api.anthropic.com",
@@ -33,6 +33,13 @@ return {
           temperature = 0.75,
           max_tokens = 32768,
         },
+      },
+      osprey = {
+        __inherited_from = "openai",
+        endpoint = "https://stardust-proxy-scp012-dxm01.apps.ocpb.osprey.hartree.stfc.ac.uk",
+        model = "Qwen3-235B-A22B-Instruct-2507-FP8",
+        api_key_name = "OSPREY_KEY",
+        timeout = 30000, -- Timeout in milliseconds
       },
     },
   },
