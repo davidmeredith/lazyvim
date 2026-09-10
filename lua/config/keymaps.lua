@@ -2,6 +2,9 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- can use the 'map' aliaas if needed to reduce boilerplate
+-- local map = vim.keymap.set
+
 -- Dave's rempas
 --
 vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
@@ -83,6 +86,11 @@ vim.api.nvim_set_var("vim_json_conceal", 0)
 -- If using, set its size
 vim.api.nvim_set_var("netrw_winsize", 25)
 
+--To create splits, use the defaults:
+-- Vertical: <leader>|
+-- Horizontal: <leader>_
+-- Close vim split:  ':q'
+
 -- Split navigagtion (use christoomey plugin instead, which is 'Ctrl hjkl')
 -- ==================
 -- Jump between splits, old vimrc version:
@@ -94,6 +102,16 @@ vim.api.nvim_set_var("netrw_winsize", 25)
 --vim.keymap.set('n', '<leader>j', ':wincmd j<CR>', {noremap=true, silent=true})
 --vim.keymap.set('n', '<leader>k', ':wincmd k<CR>', {noremap=true, silent=true})
 --vim.keymap.set('n', '<leader>l', ':wincmd l<CR>', {noremap=true, silent=true})
+-- vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { noremap = true, silent = true })
+
+-- This didnt' work, it moves the size of the splits I think. Move to window splits directly
+--map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
+--map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
+--map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
+--map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
 -- Resize splits, old vimrc version:
 -- nnoremap <leader>[ :vertical resize +5<CR>
