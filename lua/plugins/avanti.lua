@@ -37,7 +37,7 @@ return {
       osprey = {
         __inherited_from = "openai",
         endpoint = "https://stardust-proxy-scp012-dxm01.apps.ocpb.osprey.hartree.stfc.ac.uk",
-        model = "Qwen3-235B-A22B-Instruct-2507-FP8",
+        model = "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8",
         api_key_name = "OSPREY_KEY",
         timeout = 30000, -- Timeout in milliseconds
       },
