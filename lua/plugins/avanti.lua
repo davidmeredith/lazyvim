@@ -1,17 +1,25 @@
---return {}
 return {
   "yetone/avante.nvim",
-  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-  -- ⚠️ must add this setting! ! !
-  build = vim.fn.has("win32") ~= 0 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
-    or "make",
-  event = "VeryLazy",
-  version = false, -- Never set this value to "*"! Never!
-  ---@module 'avante'
-  ---@type avante.Config
+  --  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+  --  -- ⚠️ must add this setting! ! !
+  --  build = vim.fn.has("win32") ~= 0 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+  --    or "make",
+  --  event = "VeryLazy",
+  --  version = false, -- Never set this value to "*"! Never!
+  --  ---@module 'avante'
+  --  ---@type avante.Config
   opts = {
     -- add any opts here
     -- this file can contain specific instructions for your project
+    windows = {
+      edit = {
+        border = "solid", -- Options: "rounded", "single", "double", "solid", etc.
+      },
+      ask = {
+        border = "rounded",
+      },
+    },
+
     instructions_file = "avante.md",
     -- for example
     provider = "osprey",
@@ -42,6 +50,24 @@ return {
         timeout = 30000, -- Timeout in milliseconds
       },
     },
+  },
+  mappings = {
+    -- To edit the Avante sidebar, pop cursor into sidebar then:
+    -- :setlocal modifiable
+    -- :setlocal nonmodifiable
+    --
+    -- For above, add a keymap to conf (init.lua or Avante setup)
+    -- to quickly unlock/lock the current buffer:
+    --vim.keymap.set("n", "<leader>um", function()
+    --  vim.bo.modifiable = not vim.bo.modifiable
+    --  print("Buffer modifiable: " .. tostring(vim.bo.modifiable))
+    --end, { desc = "Toggle buffer modifiable" })
+
+    -- To fix the E382: Cannot write, 'buftype' option is set error in Vim,
+    -- reset the buffer type to normal with: ':set buftype=' (then save).
+
+    -- Add boarder around the avante sidebar
+    vim.api.nvim_set_hl(0, "AvanteSidebarWinSeparator", { link = "AvanteSidebarWinHorizontalSeparator" }),
   },
   dependencies = {
     "nvim-lua/plenary.nvim",

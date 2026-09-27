@@ -86,10 +86,12 @@ vim.api.nvim_set_var("vim_json_conceal", 0)
 -- If using, set its size
 vim.api.nvim_set_var("netrw_winsize", 25)
 
---To create splits, use the defaults:
+--To create splits, the defaults are:
 -- Vertical: <leader>|
 -- Horizontal: <leader>_
 -- Close vim split:  ':q'
+vim.keymap.set("n", "<leader>%", ":vsplit<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", '<leader>"', ":split<CR>", { noremap = true, silent = true })
 
 -- Split navigagtion (use christoomey plugin instead, which is 'Ctrl hjkl')
 -- ==================
