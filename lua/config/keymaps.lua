@@ -210,3 +210,12 @@ vim.lsp.enable("kotlin_lsp")
 vim.lsp.config("kotlin_lsp", {
   single_file_support = false,
 })
+
+-- mcursor / multicursor set custom clear multicursors (needed as the default is ctrl-l which is captured by herdr/tmux to navigate splits)
+-- local mc_ns = vim.api.nvim_create_namespace('nvim.multicursor')
+-- vim.api.nvim_buf_clear_namespace(0, mc_ns, 0, -1)
+
+vim.keymap.set("n", "<leader>o", function()
+  local mc_ns = vim.api.nvim_create_namespace("nvim.multicursor")
+  vim.api.nvim_buf_clear_namespace(0, mc_ns, 0, -1)
+end, { desc = "Clear multicursor namespace" })
